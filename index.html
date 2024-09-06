@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Searchable Data Table</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional CSS for responsive design */
+        .table-container {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter The Consignee TIN Number</h1>
+        <div class="input-group mb-3">
+            <input type="text" id="searchBar" class="form-control" placeholder="Enter Consignee TIN">
+            <div class="input-group-append">
+                <button id="searchButton" type="button" class="btn">
+                    <strong>SEARCH</strong>
+                    <div id="container-stars">
+                        <div id="stars"></div>
+                    </div>
+                    <div id="glow">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="spinner-border text-primary" role="status" id="loadingSpinner" style="display: none;">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div id="errorAlert" class="alert alert-danger" role="alert" style="display: none;">
+            Error fetching data. Please try again.
+        </div>
+        <div class="table-container">
+            <table id="dataTable" class="table table-bordered table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>Reg_No <input type="text" class="filter-input" placeholder="Filter"></th>
+                        <th>Declarant Name <input type="text" class="filter-input" placeholder="Filter"></th>
+                        <th>Reg Year <input type="text" class="filter-input" placeholder="Filter"></th>
+                        <th>Office Code <input type="text" class="filter-input" placeholder="Filter"></th>
+                        <th>Reg Date <input type="text" class="filter-input" placeholder="Filter"></th>
+                        <th>Ser <input type="text" class="filter-input" placeholder="Filter"></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
